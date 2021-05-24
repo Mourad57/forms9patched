@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Android.Content;
 using Android.OS;
 using Android.Print;
+using Android.Util;
 using Android.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -68,7 +70,7 @@ namespace Forms9Patch.Droid
         {
             try
             {
-                var size = new Size(8.5, 11);
+                var size = new Xamarin.Forms.Size(8.5, 11);
                 var webView = new Android.Webkit.WebView(Android.App.Application.Context);
                 webView.Settings.JavaScriptEnabled = true;
                 webView.Settings.DomStorageEnabled = true;
@@ -81,7 +83,8 @@ namespace Forms9Patch.Droid
                 webView.Layout(36, 36, (int)((PageSize.Default.Width - 0.5) * 72), (int)((PageSize.Default.Height - 0.5) * 72));
 
                 webView.SetWebViewClient(new WebViewCallBack(taskCompletionSource, jobName, PageSize.Default, null, OnPageFinished));
-                webView.LoadData(html, "text/html; charset=utf-8", "UTF-8");
+                System.String base64version = Base64.EncodeToString(Encoding.UTF8.GetBytes(html), Base64Flags.Default);
+                webView.LoadData(base64version, "text/html; charset=utf-8", "base64");
             }
             catch (Exception e)
             {

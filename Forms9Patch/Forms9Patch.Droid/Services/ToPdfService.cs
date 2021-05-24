@@ -13,6 +13,8 @@ using Android.OS;
 using Java.Lang;
 using Forms9Patch;
 using Java.Interop;
+using Android.Util;
+using System.Text;
 
 [assembly: Dependency(typeof(Forms9Patch.Droid.ToPdfService))]
 namespace Forms9Patch.Droid
@@ -53,18 +55,19 @@ namespace Forms9Patch.Droid
             //    if (file.Exists())
             //        file.Delete();
 
-                var webView = new Android.Webkit.WebView(Android.App.Application.Context);
-                webView.Settings.JavaScriptEnabled = true;
+            var webView = new Android.Webkit.WebView(Android.App.Application.Context);
+            webView.Settings.JavaScriptEnabled = true;
 #pragma warning disable CS0618 // Type or member is obsolete
-                webView.DrawingCacheEnabled = true;
+            webView.DrawingCacheEnabled = true;
 #pragma warning restore CS0618 // Type or member is obsolete
-                webView.SetLayerType(LayerType.Software, null);
+            webView.SetLayerType(LayerType.Software, null);
 
-                //webView.Layout(0, 0, (int)((size.Width - 0.5) * 72), (int)((size.Height - 0.5) * 72));
-                webView.Layout(0, 0, (int)System.Math.Ceiling(pageSize.Width), (int)System.Math.Ceiling(pageSize.Height));
+            //webView.Layout(0, 0, (int)((size.Width - 0.5) * 72), (int)((size.Height - 0.5) * 72));
+            webView.Layout(0, 0, (int)System.Math.Ceiling(pageSize.Width), (int)System.Math.Ceiling(pageSize.Height));
 
-                webView.LoadData(html, "text/html; charset=utf-8", "UTF-8");
-                webView.SetWebViewClient(new WebViewCallBack(taskCompletionSource, fileName, pageSize, margin, OnPageFinished));
+            System.String base64version = Base64.EncodeToString(Encoding.UTF8.GetBytes(html), Base64Flags.Default);
+            webView.LoadData(base64version, "text/html; charset=utf-8", "base64");
+            webView.SetWebViewClient(new WebViewCallBack(taskCompletionSource, fileName, pageSize, margin, OnPageFinished));
             //}
         }
 
@@ -78,24 +81,24 @@ namespace Forms9Patch.Droid
                 if (droidWebView != null)
                 {
                     //var size = new Size(8.5, 11);
-                    
+
                     //var externalPath = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
                     //using (var dir = new Java.IO.File(externalPath))
                     //using (var file = new Java.IO.File(dir + "/" + fileName + ".pdf"))
                     //{
-                        //if (!dir.Exists())
-                        //    dir.Mkdir();
-                        //if (file.Exists())
-                        //    file.Delete();
+                    //if (!dir.Exists())
+                    //    dir.Mkdir();
+                    //if (file.Exists())
+                    //    file.Delete();
 
-                        droidWebView.SetLayerType(LayerType.Software, null);
-                        droidWebView.Settings.JavaScriptEnabled = true;
+                    droidWebView.SetLayerType(LayerType.Software, null);
+                    droidWebView.Settings.JavaScriptEnabled = true;
 #pragma warning disable CS0618 // Type or member is obsolete
-                        droidWebView.DrawingCacheEnabled = true;
-                        droidWebView.BuildDrawingCache();
+                    droidWebView.DrawingCacheEnabled = true;
+                    droidWebView.BuildDrawingCache();
 #pragma warning restore CS0618 // Type or member is obsolete
 
-                        droidWebView.SetWebViewClient(new WebViewCallBack(taskCompletionSource, fileName, pageSize, margin, OnPageFinished));
+                    droidWebView.SetWebViewClient(new WebViewCallBack(taskCompletionSource, fileName, pageSize, margin, OnPageFinished));
                     //}
                 }
             }
@@ -115,7 +118,7 @@ namespace Forms9Patch.Droid
                 if (margin is null)
                     builder.SetMinMargins(PrintAttributes.Margins.NoMargins);
                 else
-                    builder.SetMinMargins(new PrintAttributes.Margins((int)(margin.Left * 1000 / 72), (int)(margin.Top *1000/72), (int)(margin.Right * 1000/72), (int)(margin.Bottom * 1000 / 72)));
+                    builder.SetMinMargins(new PrintAttributes.Margins((int)(margin.Left * 1000 / 72), (int)(margin.Top * 1000 / 72), (int)(margin.Right * 1000 / 72), (int)(margin.Bottom * 1000 / 72)));
                 var attributes = builder.Build();
 
                 var adapter = webView.CreatePrintDocumentAdapter(Guid.NewGuid().ToString());

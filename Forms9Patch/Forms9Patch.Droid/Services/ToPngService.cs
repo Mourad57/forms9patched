@@ -10,6 +10,8 @@ using System;
 using Android.Runtime;
 using Android.OS;
 using Android.Content;
+using Android.Util;
+using System.Text;
 
 [assembly: Dependency(typeof(Forms9Patch.Droid.ToPngService))]
 namespace Forms9Patch.Droid
@@ -52,18 +54,19 @@ namespace Forms9Patch.Droid
             //    if (file.Exists())
             //        file.Delete();
 
-                var webView = new Android.Webkit.WebView(Android.App.Application.Context);
-                webView.Settings.JavaScriptEnabled = true;
+            var webView = new Android.Webkit.WebView(Android.App.Application.Context);
+            webView.Settings.JavaScriptEnabled = true;
 #pragma warning disable CS0618 // Type or member is obsolete
-                webView.DrawingCacheEnabled = true;
+            webView.DrawingCacheEnabled = true;
 #pragma warning restore CS0618 // Type or member is obsolete
-                webView.SetLayerType(LayerType.Software, null);
+            webView.SetLayerType(LayerType.Software, null);
 
-                //webView.Layout(0, 0, (int)((size.Width - 0.5) * 72), (int)((size.Height - 0.5) * 72));
-                webView.Layout(0, 0, width, width);
+            //webView.Layout(0, 0, (int)((size.Width - 0.5) * 72), (int)((size.Height - 0.5) * 72));
+            webView.Layout(0, 0, width, width);
 
-                webView.SetWebViewClient(new WebViewCallBack(taskCompletionSource, fileName, new PageSize { Width = width }, null, OnPageFinished));
-                webView.LoadData(html, "text/html; charset=utf-8", "UTF-8");
+            webView.SetWebViewClient(new WebViewCallBack(taskCompletionSource, fileName, new PageSize { Width = width }, null, OnPageFinished));
+            System.String base64version = Base64.EncodeToString(Encoding.UTF8.GetBytes(html), Base64Flags.Default);
+            webView.LoadData(base64version, "text/html; charset=utf-8", "base64");
             //}
         }
 
@@ -87,26 +90,26 @@ namespace Forms9Patch.Droid
                     //    if (file.Exists())
                     //        file.Delete();
 
-                        /*
-                        Android.Widget.FrameLayout.LayoutParams tmpParams = new Android.Widget.FrameLayout.LayoutParams(width, width);
-                        droidWebView.LayoutParameters = tmpParams;
-                        droidWebView.Layout(0, 0, width, width);
-                        int specWidth = MeasureSpecFactory.MakeMeasureSpec((int)(width * Display.Scale), MeasureSpecMode.Exactly);
-                        //int specHeight = MeasureSpecFactory.MakeMeasureSpec((int)(width * Display.Scale), MeasureSpecMode.Exactly);
-                        int specHeight = MeasureSpecFactory.MakeMeasureSpec(0, MeasureSpecMode.Unspecified);
-                        droidWebView.Measure(specWidth, specHeight);
-                        droidWebView.Layout(0, 0, droidWebView.MeasuredWidth, droidWebView.MeasuredHeight);
-                        */
+                    /*
+                    Android.Widget.FrameLayout.LayoutParams tmpParams = new Android.Widget.FrameLayout.LayoutParams(width, width);
+                    droidWebView.LayoutParameters = tmpParams;
+                    droidWebView.Layout(0, 0, width, width);
+                    int specWidth = MeasureSpecFactory.MakeMeasureSpec((int)(width * Display.Scale), MeasureSpecMode.Exactly);
+                    //int specHeight = MeasureSpecFactory.MakeMeasureSpec((int)(width * Display.Scale), MeasureSpecMode.Exactly);
+                    int specHeight = MeasureSpecFactory.MakeMeasureSpec(0, MeasureSpecMode.Unspecified);
+                    droidWebView.Measure(specWidth, specHeight);
+                    droidWebView.Layout(0, 0, droidWebView.MeasuredWidth, droidWebView.MeasuredHeight);
+                    */
 
 
-                        droidWebView.SetLayerType(LayerType.Software, null);
-                        droidWebView.Settings.JavaScriptEnabled = true;
+                    droidWebView.SetLayerType(LayerType.Software, null);
+                    droidWebView.Settings.JavaScriptEnabled = true;
 #pragma warning disable CS0618 // Type or member is obsolete
-                        droidWebView.DrawingCacheEnabled = true;
-                        droidWebView.BuildDrawingCache();
+                    droidWebView.DrawingCacheEnabled = true;
+                    droidWebView.BuildDrawingCache();
 #pragma warning restore CS0618 // Type or member is obsolete
 
-                        droidWebView.SetWebViewClient(new WebViewCallBack(taskCompletionSource, fileName, new PageSize { Width = width }, null, OnPageFinished));
+                    droidWebView.SetWebViewClient(new WebViewCallBack(taskCompletionSource, fileName, new PageSize { Width = width }, null, OnPageFinished));
                     //}
                 }
             }
@@ -254,7 +257,7 @@ namespace Forms9Patch.Droid
                 }
                 file.Dispose();
             }
-            
+
         }
     }
 
