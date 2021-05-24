@@ -209,22 +209,14 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.9" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Forms9Patch\Forms9Patch.UWP\Forms9Patch.UWP.csproj">
-      <Project>{fc0ae786-b0f2-4f62-b898-e591b65014f0}</Project>
-      <Name>Forms9Patch.UWP</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Forms9Patch\Forms9Patch\Forms9Patch.csproj">
       <Project>{d5d3fd62-2b11-4c03-be94-776c79dd92c9}</Project>
       <Name>Forms9Patch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\FormsGestures\FormsGestures.UWP\FormsGestures.UWP.csproj">
-      <Project>{2eaa5d09-b436-40f8-a1f3-7e9acde2e8c0}</Project>
-      <Name>FormsGestures.UWP</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\FormsGestures\FormsGestures\FormsGestures.csproj">
       <Project>{f103c9ce-8aa6-4a80-b69c-3abc8f063869}</Project>

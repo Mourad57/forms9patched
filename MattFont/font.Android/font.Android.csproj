@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.AndroidX.MediaRouter" Version="1.1.0.1" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.3" />
@@ -77,30 +77,6 @@
     <ProjectReference Include="..\..\Forms9Patch\Forms9Patch\Forms9Patch.csproj">
       <Project>{61094d3d-545e-46ee-85f9-463a7507a1f8}</Project>
       <Name>Forms9Patch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FormsGestures\FormsGestures.Droid\FormsGestures.Droid.csproj">
-      <Project>{00e0cddc-b671-4876-8e78-927c50d2596a}</Project>
-      <Name>FormsGestures.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FormsGestures\FormsGestures\FormsGestures.csproj">
-      <Project>{0b50bf77-6d06-448f-8048-d52fc1d6c940}</Project>
-      <Name>FormsGestures</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MimeSharp\MimeSharp\MimeSharp.csproj">
-      <Project>{49621984-baba-4864-9065-d9c8b645828f}</Project>
-      <Name>MimeSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\P42.Utils\P42.NumericalMethods\P42.NumericalMethods.csproj">
-      <Project>{8db8ef34-acbc-472b-a91e-86ead0333c46}</Project>
-      <Name>P42.NumericalMethods</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\P42.Utils\P42.Utils.Droid\P42.Utils.Droid.csproj">
-      <Project>{25f52c0b-8c1b-4245-aff1-2eeb263c49e9}</Project>
-      <Name>P42.Utils.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\P42.Utils\P42.Utils\P42.Utils.csproj">
-      <Project>{0bcbcd07-f38d-4b3e-b9c5-22ee4fbc27bc}</Project>
-      <Name>P42.Utils</Name>
     </ProjectReference>
     <ProjectReference Include="..\font\font.csproj">
       <Project>{4A4F538F-497B-4C5D-A2C7-08B4576024FF}</Project>

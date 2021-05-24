@@ -120,7 +120,7 @@ namespace Forms9Patch
 
 
         #region Visual Elements
-        protected readonly Button _cancelButton = new Button
+        readonly Button _cancelButton = new Button
         {
             HorizontalOptions = LayoutOptions.FillAndExpand
         };
@@ -170,7 +170,7 @@ namespace Forms9Patch
 
 
         #region Event Handlers
-        protected virtual async void OnCancelButtonTappedAsync(object sender, EventArgs e)
+        async void OnCancelButtonTappedAsync(object sender, EventArgs e)
         {
             P42.Utils.BreadCrumbs.Add(GetType(), "cancel");
             PermissionState = PermissionState.Rejected;

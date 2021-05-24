@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -16,7 +16,6 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
-    <ReleaseVersion></ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,9 +25,9 @@
     <DefineConstants>TRACE;DEBUG;__DROID__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-<LangVersion>7.3</LangVersion>
-<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <LangVersion>7.3</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -38,12 +37,30 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>7.3</LangVersion>
-<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FormsGestures">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\FormsGestures.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsGestures.Droid">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\FormsGestures.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MimeSharp">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\MimeSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
+    <Reference Include="P42.NumericalMethods">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\P42.NumericalMethods.dll</HintPath>
+    </Reference>
+    <Reference Include="P42.Utils">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\P42.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="P42.Utils.Droid">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\P42.Utils.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -99,14 +116,13 @@
     <Compile Include="Effects\EntryNoUnderline.cs" />
     <Compile Include="Services\RendererResolver.cs" />
     <Compile Include="Models\FontRecord.cs" />
-    <Compile Include="Effects\EditorNoUnderline.cs" />
   </ItemGroup>
   <ItemGroup>
     <!--
-    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.2.0.6" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.1.0.1" />
     -->
     <PackageReference Include="Xamarin.Forms">
-      <Version>5.0.0.2012</Version>
+      <Version>4.8.0.1687</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
@@ -115,37 +131,13 @@
       <Version>2.80.2</Version>
     </PackageReference>
     <!--
-    <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.8" />
+    <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.6.1" />
     -->
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\P42.Utils\P42.Utils.Droid\P42.Utils.Droid.csproj">
-      <Project>{25F52C0B-8C1B-4245-AFF1-2EEB263C49E9}</Project>
-      <Name>P42.Utils.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\P42.Utils\P42.Utils\P42.Utils.csproj">
-      <Project>{0BCBCD07-F38D-4B3E-B9C5-22EE4FBC27BC}</Project>
-      <Name>P42.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\P42.Utils\P42.NumericalMethods\P42.NumericalMethods.csproj">
-      <Project>{8DB8EF34-ACBC-472B-A91E-86EAD0333C46}</Project>
-      <Name>P42.NumericalMethods</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FormsGestures\FormsGestures.Droid\FormsGestures.Droid.csproj">
-      <Project>{00E0CDDC-B671-4876-8E78-927C50D2596A}</Project>
-      <Name>FormsGestures.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FormsGestures\FormsGestures\FormsGestures.csproj">
-      <Project>{0B50BF77-6D06-448F-8048-D52FC1D6C940}</Project>
-      <Name>FormsGestures</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Forms9Patch\Forms9Patch.csproj">
       <Project>{61094D3D-545E-46EE-85F9-463A7507A1F8}</Project>
       <Name>Forms9Patch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MimeSharp\MimeSharp\MimeSharp.csproj">
-      <Project>{49621984-BABA-4864-9065-D9C8B645828F}</Project>
-      <Name>MimeSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
@@ -159,18 +151,13 @@
     <Folder Include="ListView\" />
     <Folder Include="PlatformViews\" />
   </ItemGroup-->
-  <ItemGroup>
-    <Folder Include="Popup\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <PropertyGroup>
     <NugetOutputDir>C:\Users\ben\Development\Forms9Patch2\Forms9Patch\Forms9Patch.NuGet\lib\MonoAndroid10</NugetOutputDir>
     <PostBuildEvent Condition=" '$(Configuration)'=='Release' And  '$(OS)'=='Windows_NT'  And '$(SolutionName)'=='Forms9Patch' ">
       mkdir "$(SolutionDir)Forms9Patch\Forms9Patch.NuGet\lib\MonoAndroid10" 
       xcopy "$(TargetDir)Forms9Patch.*"  "$(SolutionDir)Forms9Patch\Forms9Patch.NuGet\lib\MonoAndroid10" /Y
-      xcopy "$(TargetDir)FormsGestures.*"  "$(SolutionDir)Forms9Patch\Forms9Patch.NuGet\lib\MonoAndroid10" /Y
-      xcopy "$(TargetDir)P42.*"  "$(SolutionDir)Forms9Patch\Forms9Patch.NuGet\lib\MonoAndroid10" /Y
-      xcopy "$(TargetDir)MimeSharp.*"  "$(SolutionDir)Forms9Patch\Forms9Patch.NuGet\lib\MonoAndroid10" /Y
     </PostBuildEvent>
   </PropertyGroup>
 </Project>

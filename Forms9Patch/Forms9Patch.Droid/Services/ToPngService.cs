@@ -90,26 +90,26 @@ namespace Forms9Patch.Droid
                     //    if (file.Exists())
                     //        file.Delete();
 
-                    /*
-                    Android.Widget.FrameLayout.LayoutParams tmpParams = new Android.Widget.FrameLayout.LayoutParams(width, width);
-                    droidWebView.LayoutParameters = tmpParams;
-                    droidWebView.Layout(0, 0, width, width);
-                    int specWidth = MeasureSpecFactory.MakeMeasureSpec((int)(width * Display.Scale), MeasureSpecMode.Exactly);
-                    //int specHeight = MeasureSpecFactory.MakeMeasureSpec((int)(width * Display.Scale), MeasureSpecMode.Exactly);
-                    int specHeight = MeasureSpecFactory.MakeMeasureSpec(0, MeasureSpecMode.Unspecified);
-                    droidWebView.Measure(specWidth, specHeight);
-                    droidWebView.Layout(0, 0, droidWebView.MeasuredWidth, droidWebView.MeasuredHeight);
-                    */
+                        /*
+                        Android.Widget.FrameLayout.LayoutParams tmpParams = new Android.Widget.FrameLayout.LayoutParams(width, width);
+                        droidWebView.LayoutParameters = tmpParams;
+                        droidWebView.Layout(0, 0, width, width);
+                        int specWidth = MeasureSpecFactory.MakeMeasureSpec((int)(width * Display.Scale), MeasureSpecMode.Exactly);
+                        //int specHeight = MeasureSpecFactory.MakeMeasureSpec((int)(width * Display.Scale), MeasureSpecMode.Exactly);
+                        int specHeight = MeasureSpecFactory.MakeMeasureSpec(0, MeasureSpecMode.Unspecified);
+                        droidWebView.Measure(specWidth, specHeight);
+                        droidWebView.Layout(0, 0, droidWebView.MeasuredWidth, droidWebView.MeasuredHeight);
+                        */
 
 
-                    droidWebView.SetLayerType(LayerType.Software, null);
-                    droidWebView.Settings.JavaScriptEnabled = true;
+                        droidWebView.SetLayerType(LayerType.Software, null);
+                        droidWebView.Settings.JavaScriptEnabled = true;
 #pragma warning disable CS0618 // Type or member is obsolete
-                    droidWebView.DrawingCacheEnabled = true;
-                    droidWebView.BuildDrawingCache();
+                        droidWebView.DrawingCacheEnabled = true;
+                        droidWebView.BuildDrawingCache();
 #pragma warning restore CS0618 // Type or member is obsolete
 
-                    droidWebView.SetWebViewClient(new WebViewCallBack(taskCompletionSource, fileName, new PageSize { Width = width }, null, OnPageFinished));
+                        droidWebView.SetWebViewClient(new WebViewCallBack(taskCompletionSource, fileName, new PageSize { Width = width }, null, OnPageFinished));
                     //}
                 }
             }
@@ -257,7 +257,7 @@ namespace Forms9Patch.Droid
                 }
                 file.Dispose();
             }
-
+            
         }
     }
 

@@ -4,8 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Forms9Patch</AssemblyName>
     <RootNamespace>Forms9Patch</RootNamespace>
-    <PackageIcon>Resources\icon.png</PackageIcon>
-    <ReleaseVersion></ReleaseVersion>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
@@ -22,16 +21,12 @@
     <!--DebugType>full</DebugType-->
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
     <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\MimeSharp\MimeSharp\MimeSharp.csproj" />
-    <ProjectReference Include="..\..\P42.Utils\P42.Utils\P42.Utils.csproj" />
-    <ProjectReference Include="..\..\P42.Utils\P42.NumericalMethods\P42.NumericalMethods.csproj" />
-    <ProjectReference Include="..\..\FormsGestures\FormsGestures\FormsGestures.csproj" />
+    <None Include="resources\icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\Fonts\STIXGeneral.otf" />
@@ -51,6 +46,20 @@
     <Folder Include="Elements\Popups\Core\" />
     <Folder Include="Elements\Popups\Core\Converters\" />
     <Folder Include="Elements\Popups\Core\Animations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FormsGestures">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\netstandard2.0\FormsGestures.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeSharp">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\netstandard2.0\MimeSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="P42.NumericalMethods">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\netstandard2.0\P42.NumericalMethods.dll</HintPath>
+    </Reference>
+    <Reference Include="P42.Utils">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\netstandard2.0\P42.Utils.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition=" '$(Configuration)'=='Release' And '$(OS)'=='Windows_NT' And '$(SolutionName)'=='Forms9Patch' ">
     <Message Text="SolutionDir = $(SolutionDir)" Importance="High" />  

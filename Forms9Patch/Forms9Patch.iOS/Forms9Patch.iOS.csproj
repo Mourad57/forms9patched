@@ -12,7 +12,6 @@
     <RootNamespace>Forms9Patch.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Forms9Patch.iOS</AssemblyName>
-    <ReleaseVersion></ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <LangVersion>7.3</LangVersion>
-    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -34,10 +32,27 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <LangVersion>7.3</LangVersion>
-    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <!-- System Packages-->
   <ItemGroup>
+    <Reference Include="FormsGestures">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\Xamarin.iOS10\FormsGestures.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsGestures.iOS">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\Xamarin.iOS10\FormsGestures.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeSharp">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\Xamarin.iOS10\MimeSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="P42.NumericalMethods">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\Xamarin.iOS10\P42.NumericalMethods.dll</HintPath>
+    </Reference>
+    <Reference Include="P42.Utils">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\Xamarin.iOS10\P42.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="P42.Utils.iOS">
+      <HintPath>..\..\..\forms9patch.2.4.9\lib\Xamarin.iOS10\P42.Utils.iOS.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
@@ -47,37 +62,9 @@
   </ItemGroup>
   <!-- Project References-->
   <ItemGroup>
-    <ProjectReference Include="..\..\MimeSharp\MimeSharp\MimeSharp.csproj">
-      <Project>{F7CC8202-85ED-498A-8CE0-2FA856F2D4CE}</Project>
-      <Name>MimeSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\P42.Utils\P42.Utils.iOS\P42.Utils.iOS.csproj">
-      <Project>{530E21BA-A725-4714-8678-74CCA5CDBB38}</Project>
-      <Name>P42.Utils.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
-    <ProjectReference Include="..\..\P42.Utils\P42.Utils\P42.Utils.csproj">
-      <Project>{ABD591A3-A0A5-4B6F-9DDA-E6937052F595}</Project>
-      <Name>P42.Utils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\P42.Utils\P42.NumericalMethods\P42.NumericalMethods.csproj">
-      <Project>{46380F62-7AA8-4C53-BB68-C179F98CA61A}</Project>
-      <Name>P42.NumericalMethods</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FormsGestures\FormsGestures.iOS\FormsGestures.iOS.csproj">
-      <Project>{48ADFBE6-0CBA-4317-8371-250A7F0647AE}</Project>
-      <Name>FormsGestures.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
     <ProjectReference Include="..\Forms9Patch\Forms9Patch.csproj">
-      <Project>{8432B242-B047-4B7D-B565-2F0FBFF56058}</Project>
+      <Project>{61094D3D-545E-46EE-85F9-463A7507A1F8}</Project>
       <Name>Forms9Patch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FormsGestures\FormsGestures\FormsGestures.csproj">
-      <Project>{C01DDE7B-6B22-4315-AD7C-27CBD932B07C}</Project>
-      <Name>FormsGestures</Name>
     </ProjectReference>
   </ItemGroup>
   <!-- Source -->
@@ -126,13 +113,11 @@
     <Compile Include="Effects\EntryClearButtonEffect.cs" />
     <Compile Include="Services\ToPdfService.cs" />
     <Compile Include="Services\RendererResolver.cs" />
-    <Compile Include="Effects\EntryNoOutlineEffect.cs" />
   </ItemGroup>
-
   <!-- NuGet Packages-->
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms">
-      <Version>5.0.0.2012</Version>
+      <Version>4.8.0.1687</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
@@ -141,9 +126,7 @@
       <Version>2.80.2</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Popup\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent Condition=" '$(Configuration)'=='Release' And '$(OS)'=='Windows_NT' And '$(SolutionName)'=='Forms9Patch'  ">

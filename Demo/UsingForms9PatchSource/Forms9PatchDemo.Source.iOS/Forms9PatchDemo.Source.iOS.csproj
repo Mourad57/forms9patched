@@ -146,8 +146,8 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
     <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
   </ItemGroup>
@@ -213,10 +213,6 @@
       <Project>{61094D3D-545E-46EE-85F9-463A7507A1F8}</Project>
       <Name>Forms9Patch</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Forms9Patch\Forms9Patch.iOS\Forms9Patch.iOS.csproj">
-      <Project>{1D9DAC1B-92F4-4EFE-B915-5A998435B02F}</Project>
-      <Name>Forms9Patch.iOS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Forms9PatchDemo.Source\Forms9PatchDemo.Source.csproj">
       <Project>{CB785589-9453-4183-B2F8-59469EFCBA49}</Project>
       <Name>Forms9PatchDemo.Source</Name>
@@ -224,10 +220,6 @@
     <ProjectReference Include="..\..\..\FormsGestures\FormsGestures\FormsGestures.csproj">
       <Project>{0B50BF77-6D06-448F-8048-D52FC1D6C940}</Project>
       <Name>FormsGestures</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\FormsGestures\FormsGestures.iOS\FormsGestures.iOS.csproj">
-      <Project>{48ADFBE6-0CBA-4317-8371-250A7F0647AE}</Project>
-      <Name>FormsGestures.iOS</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\MimeSharp\MimeSharp\MimeSharp.csproj">
       <Project>{49621984-BABA-4864-9065-D9C8B645828F}</Project>
@@ -244,6 +236,8 @@
     <ProjectReference Include="..\..\..\P42.Utils\P42.Utils.iOS\P42.Utils.iOS.csproj">
       <Project>{530E21BA-A725-4714-8678-74CCA5CDBB38}</Project>
       <Name>P42.Utils.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
