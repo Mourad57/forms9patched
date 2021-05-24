@@ -22,11 +22,10 @@ jobs:
     - uses: microsoft/setup-msbuild@v1
     - name: Build
       run: |
+        nuget restore
         cd Forms9Patch
         cd Forms9Patch
         msbuild Forms9Patch.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
     - name: Publish NuGet
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
