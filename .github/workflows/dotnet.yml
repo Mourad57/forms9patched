@@ -19,8 +19,12 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore
+    - uses: microsoft/setup-msbuild@v1
     - name: Build
-      run: msbuild Forms9Patch\Forms9Patch\Forms9Patch.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
+      run: |
+        cd Forms9Patch
+        cd Forms9Patch
+        msbuild Forms9Patch.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish NuGet
