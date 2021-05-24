@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
-        <id>Forms9Patch</id>
+        <id>Forms9Patched</id>
         <version>2.4.9.1</version>
         <title>Forms9Patch</title>
         <authors>Ben Askren</authors>
