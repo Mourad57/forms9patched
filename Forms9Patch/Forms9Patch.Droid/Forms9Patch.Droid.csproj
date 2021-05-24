@@ -41,25 +41,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FormsGestures">
-      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\FormsGestures.dll</HintPath>
+      <HintPath>..\..\libs\MonoAndroid10\FormsGestures.dll</HintPath>
     </Reference>
     <Reference Include="FormsGestures.Droid">
-      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\FormsGestures.Droid.dll</HintPath>
+      <HintPath>..\..\libs\MonoAndroid10\FormsGestures.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MimeSharp">
-      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\MimeSharp.dll</HintPath>
+      <HintPath>..\..\libs\MonoAndroid10\MimeSharp.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="P42.NumericalMethods">
-      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\P42.NumericalMethods.dll</HintPath>
+      <HintPath>..\..\libs\MonoAndroid10\P42.NumericalMethods.dll</HintPath>
     </Reference>
     <Reference Include="P42.Utils">
-      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\P42.Utils.dll</HintPath>
+      <HintPath>..\..\libs\MonoAndroid10\P42.Utils.dll</HintPath>
     </Reference>
     <Reference Include="P42.Utils.Droid">
-      <HintPath>..\..\..\forms9patch.2.4.9\lib\MonoAndroid10\P42.Utils.Droid.dll</HintPath>
+      <HintPath>..\..\libs\MonoAndroid10\P42.Utils.Droid.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

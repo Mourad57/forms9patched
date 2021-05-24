@@ -19,13 +19,13 @@
 
     <ItemGroup>
       <Reference Include="MimeSharp">
-        <HintPath>..\..\..\forms9patch.2.4.9\lib\netstandard2.0\MimeSharp.dll</HintPath>
+        <HintPath>..\..\libs\netstandard2.0\MimeSharp.dll</HintPath>
       </Reference>
       <Reference Include="P42.NumericalMethods">
-        <HintPath>..\..\..\forms9patch.2.4.9\lib\netstandard2.0\P42.NumericalMethods.dll</HintPath>
+        <HintPath>..\..\libs\netstandard2.0\P42.NumericalMethods.dll</HintPath>
       </Reference>
       <Reference Include="P42.Utils">
-        <HintPath>..\..\..\forms9patch.2.4.9\lib\netstandard2.0\P42.Utils.dll</HintPath>
+        <HintPath>..\..\libs\netstandard2.0\P42.Utils.dll</HintPath>
       </Reference>
     </ItemGroup>
 </Project>
