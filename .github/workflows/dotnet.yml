@@ -29,9 +29,8 @@ jobs:
     - name: Publish NuGet
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
-        PACKAGE_NAME: Forms9Patched
-        # Filepath of the project to be packaged, relative to root of repository
         PROJECT_FILE_PATH: Forms9Patch\Forms9Patch\Forms9Patch.csproj
+        PACKAGE_NAME: Forms9Patched
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
         #VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
         VERSION_STATIC: 2.4.9.1
